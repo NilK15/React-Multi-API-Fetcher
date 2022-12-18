@@ -1,3 +1,7 @@
+# react-multi-api-fetcher
+
+A webapp consisting of APIs that I found interesting to work with to fetch data.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
