@@ -2,8 +2,7 @@
 
 A webapp consisting of APIs that I found interesting to work with to fetch data.
 
-# Getting Started with Create React App
-
+# React built-in notes
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
