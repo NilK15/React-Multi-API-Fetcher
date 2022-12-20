@@ -1,0 +1,43 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 28px;
+}
+
+.Header-title {
+  background-color: black;
+  padding: 20px 0 20px 0;
+  color: white;
+}
+
+.navbar {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.navbutton {
+  height: 45px;
+  font-size: 28px;
+  border-radius: 4px;
+  border: solid;
+  background-color: white;
+}
+
+.navbutton:active {
+  background-color: black;
+  border-radius: 4px;
+  border: solid;
+  border-color: black;
+  color: white;
+}
+
+.selected {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+
