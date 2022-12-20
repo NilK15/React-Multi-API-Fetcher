@@ -18,7 +18,7 @@
   margin-top: 20px;
 }
 
-.navbutton {
+nav button {
   height: 45px;
   font-size: 28px;
   border-radius: 4px;
@@ -26,7 +26,7 @@
   background-color: white;
 }
 
-.navbutton:active {
+nav button:active {
   background-color: black;
   border-radius: 4px;
   border: solid;

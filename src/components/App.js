@@ -1,10 +1,9 @@
-import '../styles/App.css';
-import Header from './Header'
+// import "../styles/App.css";
+// import Header from "./Header";
+// import Nasa from "./Nasa";
 
-function App() {
-  return (
-    <Header />
-  );
-}
+// function App() {
+//   return <div className="Appdiv"></div>;
+// }
 
-export default App;
+// export default App;

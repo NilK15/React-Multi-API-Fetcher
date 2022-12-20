@@ -1,0 +1,28 @@
+.nasadiv {
+  display:none;
+}
+
+.imagebutton {
+  font-size: 20px;
+  height: 50px;
+  background-color: white;
+  border: solid;
+  border-width: 1px;
+  border-color: blue;
+}
+
+.imagebutton:active {
+  background-color: blue;
+  color: white;
+}
+
+.nasadivshow {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  /* visibility: visible; */
+}
+
+.nasaimage {
+  width: 500px;
+}
