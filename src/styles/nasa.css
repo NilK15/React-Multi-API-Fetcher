@@ -1,4 +1,4 @@
-.nasadiv {
+.nasadiv { 
   display:none;
 }
 
@@ -9,6 +9,8 @@
   border: solid;
   border-width: 1px;
   border-color: blue;
+  border-radius: 10px;
+  margin-top:30px;
 }
 
 .imagebutton:active {
@@ -18,11 +20,52 @@
 
 .nasadivshow {
   display: flex;
-  justify-content: space-around;
-  margin-top: 100px;
-  /* visibility: visible; */
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  margin: 100px 0 50px 0;
 }
 
+
+.nasadivshow p {
+  margin: 20px 20px 0 20px;
+  /* width: 50%; */
+}
+
+.nasaimagedetails {
+  border-radius: 20px;
+  margin: 30px;
+  width: 80%;
+}
+
+
+.nasainfo {
+  width: 50%;
+  height: 200px;
+  overflow: hidden scroll;
+}
+
+.nasacolors {
+  
+}
+
+.nasaLogo {
+  width: 200px;
+  animation: jiggleJiggle 1s alternate linear infinite;
+}
+
+.nasainfoinvisible,
+.nasadate, 
+.nasaexplanation,
 .nasaimage {
-  width: 500px;
+  display:none;
+}
+
+@keyframes jiggleJiggle {
+ from {
+  transform: rotate(10deg);
+ } 
+ to {
+  transform: rotate(-10deg);
+ }
 }
