@@ -9,8 +9,10 @@
   border: solid;
   border-width: 1px;
   border-color: pink;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
+  box-shadow: 10px 10px 10px black;
+  cursor: pointer;
 }
 
 .imagebutton:active {
@@ -43,21 +45,34 @@
 
 .nasaimagedetails {
   border-radius: 20px;
-  margin: 30px;
-  width: 60vh;
+  border: solid;
+  border-color: aqua;
+  width: 80vh;
 }
 
 
 .nasainfo {
-  width: 50%;
-  height: 200px;
+  width: 40vh;
+  height: 45vh;
   overflow: hidden scroll;
+  margin-left: 50px;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.nasainfo::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 
 .nasaLogo {
-  width: 100px;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(11, 61, 145);
+  border-radius: 40px;
   animation: jiggleJiggle 1s alternate linear infinite;
+  box-shadow: 10px 10px 10px black;
+
 }
 
 .nasainfoinvisible,
@@ -65,6 +80,17 @@
 .nasaexplanation,
 .nasaimage {
   display:none;
+}
+
+.fetchedstuffdiv {
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+}
+
+.nasadatexp {
+  width: 35%;
 }
 
 @keyframes jiggleJiggle {

@@ -35,20 +35,22 @@ function Nasa() {
           Image of the Day
         </button>
       </div>
-      <img
-        className="nasaimage nasaimagedetails"
-        src={data.url}
-        alt="I'M LOADING RELAX!"
-      ></img>
-      <div className="nasainfoinvisible">
-        <p className="nasadate">
-          <strong>Date: </strong>
-          {data.date}
-        </p>
-        <p className="nasaexplanation">
-          <strong>Explanation: </strong>
-          {data.explanation}
-        </p>
+      <div className="fetchedstuffdiv">
+        <img
+          className="nasaimage nasaimagedetails"
+          src={data.url}
+          alt="I'M LOADING RELAX!"
+        ></img>
+        <div className="nasainfoinvisible nasadatexp">
+          <p className="nasadate">
+            <strong>Date: </strong>
+            {data.date}
+          </p>
+          <p className="nasaexplanation">
+            <strong>Explanation: </strong>
+            {data.explanation}
+          </p>
+        </div>
       </div>
     </div>
   );
