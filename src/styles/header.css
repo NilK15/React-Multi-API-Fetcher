@@ -20,11 +20,13 @@
 
 nav button {
   height: 45px;
+  margin: 0px 40px 0 40px;
   flex: 1;
   font-size: 28px;
   border-radius: 4px;
   border: solid;
-  background-color: white;
+  background-color: transparent;
+  color: white;
 }
 
 nav button:active {
@@ -41,4 +43,16 @@ nav button:active {
   color: white;
 }
 
+body{
+  background-color: brown;
+} 
+
+.bodybackground{
+  height: 100vh;
+  background-image: url(../img/space.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .9;
+}
 

@@ -5,17 +5,17 @@
 .imagebutton {
   font-size: 20px;
   height: 50px;
-  background-color: white;
+  background-color: rgb(57, 29, 73);
   border: solid;
   border-width: 1px;
-  border-color: blue;
+  border-color: pink;
   border-radius: 10px;
-  margin-top:30px;
+  color: white;
 }
 
 .imagebutton:active {
-  background-color: blue;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .nasadivshow {
@@ -23,19 +23,28 @@
   flex-direction: column;
   justify-content: space-between; 
   align-items: center;
-  margin: 100px 0 50px 0;
+  padding: 50px 0 50px 0;
+
 }
 
 
 .nasadivshow p {
+  color: white;
   margin: 20px 20px 0 20px;
   /* width: 50%; */
+}
+
+.logobuttondiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50vh;
 }
 
 .nasaimagedetails {
   border-radius: 20px;
   margin: 30px;
-  width: 80%;
+  width: 60vh;
 }
 
 
@@ -45,12 +54,9 @@
   overflow: hidden scroll;
 }
 
-.nasacolors {
-  
-}
 
 .nasaLogo {
-  width: 200px;
+  width: 100px;
   animation: jiggleJiggle 1s alternate linear infinite;
 }
 

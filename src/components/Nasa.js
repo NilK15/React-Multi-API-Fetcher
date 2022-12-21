@@ -29,10 +29,12 @@ function Nasa() {
 
   return (
     <div className="nasadiv">
-      <img className="nasaLogo" src={nasaLogo} alt="I'M LOADING RELAX!"></img>
-      <button className="imagebutton" onClick={() => fetchImage()}>
-        Image of the Day
-      </button>
+      <div className="logobuttondiv">
+        <img className="nasaLogo" src={nasaLogo} alt="I'M LOADING RELAX!"></img>
+        <button className="imagebutton" onClick={() => fetchImage()}>
+          Image of the Day
+        </button>
+      </div>
       <img
         className="nasaimage nasaimagedetails"
         src={data.url}

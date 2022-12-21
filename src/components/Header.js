@@ -1,16 +1,11 @@
 // import logo from "../svg/nasa.svg";
 import "../styles/header.css";
+import nasapic from "../img/space.jpg";
 
 const showHideDiv = (div) => {
+  document.body.classList.add("bodybackground");
   let nasa = document.getElementsByClassName("nasadiv");
-  // let dog = document.getElementsByClassName("dogdic");
-  // let pokemon = document.getElementsByClassName("pokemondiv");
-  // let google = document.getElementsByClassName("googlediv");
-
   nasa[0].classList.remove("nasadivshow");
-  // dog[0].classList.remove("dogdivshow");
-  // pokemon[0].classList.remove("pokemondivshow");
-  // google[0].classList.remove("googledivshow");
   let divToShow = document.getElementsByClassName(div);
   divToShow[0].classList.add("nasadivshow");
 };
@@ -24,7 +19,6 @@ const hideShow = (innerHTML, divToShow) => {
       element.classList.remove("selected");
     }
   }
-  console.log(buttons);
   showHideDiv(divToShow);
 };
 
