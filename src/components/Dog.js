@@ -3,12 +3,12 @@ import "../styles/dog.css";
 
 function Dog() {
   const [dogData, setDogData] = useState(["I'll be getting replaced :)"]);
-  const [dogName, setDogName] = useState("");
-  const [dogHeight, setDogHeight] = useState("");
-  const [dogWeight, setDogWeight] = useState("");
-  const [dogBredFor, setDogBredFor] = useState("Not Supplied by API");
-  const [dogLife, setDogLife] = useState("");
-  const [dogTemperament, setDogTemperament] = useState("");
+  const [dogName, setDogName] = useState("Not Supplied By API");
+  const [dogHeight, setDogHeight] = useState("Not Supplied By API");
+  const [dogWeight, setDogWeight] = useState("Not Supplied By API");
+  const [dogBredFor, setDogBredFor] = useState("Not Supplied By APIN");
+  const [dogLife, setDogLife] = useState("Not Supplied By API");
+  const [dogTemperament, setDogTemperament] = useState("Not Supplied By API");
   const [dogError, setError] = useState("");
 
   const fetchDogStuff = () => {
