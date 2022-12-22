@@ -10,11 +10,9 @@ const removeDivs = (div) => {
   divArray
     .filter((e) => e !== divToExclude)
     .map((e) => arrayWithoutExcludedDiv.push(e));
-  console.log(arrayWithoutExcludedDiv);
 
   arrayWithoutExcludedDiv.forEach((e) => {
     let divToRemove = document.getElementsByClassName(e);
-    console.log(divToRemove);
     if (divToRemove[0].classList.contains(`${e}show`)) {
       divToRemove[0].classList.remove(`${e}show`);
     }

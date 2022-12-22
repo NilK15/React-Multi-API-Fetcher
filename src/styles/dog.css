@@ -7,7 +7,16 @@
   flex-direction: column;
 }
 
-.bodybackgrounddog{
-  /* background-image: url(../img/christmass.jpg); */
-  background-color: white;
+.dogbutton {
+  margin-top: 20px;
+  width: 100px;
+}
+
+.dogimage {
+  width: 55%;
+}
+
+.bodybackgrounddogdiv{
+  background-image: url(../img/christmass.jpg);
+  /* background-color: white; */
 }

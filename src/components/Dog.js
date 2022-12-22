@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "../styles/dog.css";
 
 function Dog() {
-  const [data, setData] = useState("");
-
-  useEffect(() => {
-    fetchDogStuff();
-  }, []);
+  const [dogData, setDogData] = useState(["I'll be getting replaced :)"]);
+  const [dogName, setDogName] = useState("");
+  const [dogError, setError] = useState("");
 
   const fetchDogStuff = () => {
     // let nasaDateCollection = document.getElementsByClassName("nasadate");
@@ -33,14 +31,34 @@ function Dog() {
       }
     )
       .then((res) => res.json())
-      .then((res) => console.log(res));
-    // .then((data) => setData(data));
+      .then((data) => {
+        setDogData(data);
+        setDogName(data[0].breeds[0].name);
+      })
+      .catch((error) => setError(error));
   };
 
   return (
     <div className="dogdiv">
-      <div className="dogimage">{/* <img src={data.} */}</div>
-      <div className="doginfo">This will be the dog info stuffs!</div>
+      <button
+        className="dogbutton"
+        onClick={() => {
+          fetchDogStuff();
+        }}
+      >
+        Retrieve Doge
+      </button>
+      <img
+        className="dogimage"
+        src={dogData[0].url}
+        alt="Nothing to see here!"
+      ></img>
+      <div className="doginfo">
+        This will be the dog info stuffs!
+        <p>
+          <strong>Height: </strong> {dogName}
+        </p>
+      </div>
     </div>
   );
 }
