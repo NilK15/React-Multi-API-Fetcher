@@ -59,7 +59,7 @@ body{
   background-position: center;
 } 
 
-.bodybackground{
+.bodybackgroundnasa{
   height: 100vh;
   background-image: url(../img/nebula.jpeg);
   background-size: cover;

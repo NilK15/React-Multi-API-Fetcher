@@ -43,12 +43,11 @@
   flex-direction: column;
   justify-content: space-between; 
   align-items: center;
-  padding: 50px 0 50px 0;
+  padding: 50px 0 0px 0;
 }
 
 .nasadivshow p {
   color: white;
-  margin: 0px 0px 20px 0px;
   /* width: 50%; */
 }
 
@@ -100,6 +99,7 @@
   padding-right: 10px;
 }
 
+
 .nasaauthor {
   position: fixed;
   bottom: 0;
@@ -109,6 +109,7 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
 @keyframes jiggleJiggle {
  from {
   transform: rotate(10deg);
@@ -134,6 +135,19 @@
   .nasadatexp {
     width: 90%;
     margin-top: 30px;
+  }
+  
+  .nasafooter {
+    margin-top: 20px;
+    position:relative;
+    bottom: 0px;
+  }
+  .nasaauthor {
+    position:relative;
+    margin-top: 20px;
+    bottom: 0px;
+    right: 0px;
+
   }
   
 }

@@ -2,12 +2,14 @@
 import "../styles/header.css";
 import nasapic from "../img/space.jpg";
 
-const showHideDiv = (div) => {
-  document.body.classList.add("bodybackground");
-  let nasa = document.getElementsByClassName("nasadiv");
-  nasa[0].classList.remove("nasadivshow");
-  let divToShow = document.getElementsByClassName(div);
-  divToShow[0].classList.add("nasadivshow");
+const showHideDiv = (divClass) => {
+  if (divClass === "nasadiv") {
+    document.body.classList.add("bodybackgroundnasa");
+    let nasa = document.getElementsByClassName("nasadiv");
+    nasa[0].classList.remove("nasadivshow");
+    let divToShow = document.getElementsByClassName(divClass);
+    divToShow[0].classList.add("nasadivshow");
+  }
 };
 
 const hideShow = (innerHTML, divToShow) => {
