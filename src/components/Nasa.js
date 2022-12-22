@@ -10,21 +10,6 @@ function Nasa() {
       document.getElementsByClassName("fetchedstuffdiv");
     divToHideShowColletion[0].classList.add("fetchedstuffdivshow");
     console.log(divToHideShowColletion);
-    divToHideShowColletion[0].classList.remove("fetchedstuffdiv");
-
-    // let nasaDateCollection = document.getElementsByClassName("nasadate");
-    // let nasaExplanationCollection =
-    //   document.getElementsByClassName("nasaexplanation");
-    // let nasaImageCollection = document.getElementsByClassName("nasaimage");
-    // let nasaInfoCollection =
-    //   document.getElementsByClassName("nasainfoinvisible");
-
-    // nasaDateCollection[0].classList.toggle("nasadate");
-    // nasaExplanationCollection[0].classList.toggle("nasaexplanation");
-    // nasaImageCollection[0].classList.toggle("nasaimage");
-
-    // nasaInfoCollection[0].classList.add("nasainfo");
-    // nasaInfoCollection[0].classList.toggle("nasainfoinvisible");
 
     fetch(
       "https://api.nasa.gov/planetary/apod?api_key=jozRCXDTPwLMG0Q3Kw3mWpSfV5bVxzWLNj6q5TC2"

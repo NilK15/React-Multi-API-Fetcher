@@ -67,6 +67,12 @@ function Dog() {
           </p>
         </div>
       </div>
+      <div className="dogfooter">
+        <a href="https://thedogapi.com/">
+          Made by using API found on https://thedogapi.com/
+        </a>
+      </div>
+      <div className="dogauthor">Developed by: Sunil Khatri</div>
     </div>
   );
 }
