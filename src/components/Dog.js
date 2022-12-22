@@ -6,7 +6,7 @@ function Dog() {
   const [dogName, setDogName] = useState("Not Supplied By API");
   const [dogHeight, setDogHeight] = useState("Not Supplied By API");
   const [dogWeight, setDogWeight] = useState("Not Supplied By API");
-  const [dogBredFor, setDogBredFor] = useState("Not Supplied By APIN");
+  const [dogBredFor, setDogBredFor] = useState("Not Supplied By API");
   const [dogLife, setDogLife] = useState("Not Supplied By API");
   const [dogTemperament, setDogTemperament] = useState("Not Supplied By API");
   const [dogError, setError] = useState("");
@@ -16,7 +16,6 @@ function Dog() {
       document.getElementsByClassName("fetcheddogstuff");
     divToHideShowColletion[0].classList.add("fetcheddogstuffshow");
 
-    console.log(divToHideShowColletion);
     fetch(
       "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1",
       {
@@ -28,13 +27,23 @@ function Dog() {
     )
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setDogData(data);
         setDogName(data[0].breeds[0].name);
         setDogHeight(data[0].breeds[0].height.metric);
         setDogWeight(data[0].breeds[0].weight.metric);
-        setDogTemperament(data[0].breeds[0].temperament);
+
+        if (!data[0].breeds[0].temperament) {
+          setDogTemperament("Not Supplied by API");
+        } else {
+          setDogTemperament(data[0].breeds[0].temperament);
+        }
         setDogLife(data[0].breeds[0].life_span);
-        setDogBredFor(data[0].breeds[0].bred_for);
+        if (!data[0].breeds[0].bred_for) {
+          setDogBredFor("Not Supplied by API");
+        } else {
+          setDogBredFor(data[0].breeds[0].bred_for);
+        }
       })
       .catch((error) => setError(error));
   };
