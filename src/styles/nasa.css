@@ -56,8 +56,7 @@
   border-radius: 20px;
   border: solid;
   border-color: aqua;
-  width: 55%;
-  max-width: 1000px;
+  max-width: 55%;
   max-height: 600px;
 }
 
@@ -74,19 +73,26 @@
     display: none;  /* Safari and Chrome */
 }
 
-.nasainfoinvisible,
+/* .nasainfoinvisible,
 .nasadate, 
 .nasaexplanation,
 .nasaimage {
-  display:none;
-}
+  display: flex;
+} */
+
 
 .fetchedstuffdiv {
+  display: none;
+}
+
+.fetchedstuffdivshow {
   display: flex;
   margin-top: 30px;
   width: 100%;
   justify-content: space-around;
+
 }
+
 
 .nasadatexp {
   width: 35%;

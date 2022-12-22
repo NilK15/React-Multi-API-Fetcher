@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Header from "./components/Header";
 import Nasa from "./components/Nasa";
 import Dog from "./components/Dog";
+import "./styles/general.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

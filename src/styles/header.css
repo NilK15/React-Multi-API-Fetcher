@@ -51,13 +51,7 @@ nav button:active {
   color: white;
 }
 
-body{
-  /* background-image: url(../img/space.jpg); */
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-} 
+
 
 .bodybackgroundnasadiv{
   height: 100vh;
