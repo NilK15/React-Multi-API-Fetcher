@@ -6,9 +6,9 @@ function Dog() {
   const [dogName, setDogName] = useState("");
   const [dogHeight, setDogHeight] = useState("");
   const [dogWeight, setDogWeight] = useState("");
-  const [dogBredFor, setDogBredFor] = useState("");
+  const [dogBredFor, setDogBredFor] = useState("Not Supplied by API");
   const [dogLife, setDogLife] = useState("");
-  const [dogTempArray, setDogTempArray] = useState("");
+  const [dogTemperament, setDogTemperament] = useState("");
   const [dogError, setError] = useState("");
 
   const fetchDogStuff = () => {
@@ -30,6 +30,11 @@ function Dog() {
       .then((data) => {
         setDogData(data);
         setDogName(data[0].breeds[0].name);
+        setDogHeight(data[0].breeds[0].height.metric);
+        setDogWeight(data[0].breeds[0].weight.metric);
+        setDogTemperament(data[0].breeds[0].temperament);
+        setDogLife(data[0].breeds[0].life_span);
+        setDogBredFor(data[0].breeds[0].bred_for);
       })
       .catch((error) => setError(error));
   };
@@ -57,13 +62,19 @@ function Dog() {
             <strong>Breed Name: </strong> {dogName}
           </p>
           <p>
-            <strong>Height: </strong> {dogName}
+            <strong>Height: </strong> {dogHeight} "
           </p>
           <p>
-            <strong>Weight: </strong> {dogName}
+            <strong>Weight: </strong> {dogWeight} lbs
           </p>
           <p>
-            <strong>Temperament: </strong> {dogName}
+            <strong>Life Span: </strong> {dogLife}
+          </p>
+          <p>
+            <strong>Bred For: </strong> {dogBredFor}
+          </p>
+          <p>
+            <strong>Temperament: </strong> {dogTemperament}
           </p>
         </div>
       </div>
