@@ -5,11 +5,11 @@
 .imagebutton {
   font-size: 20px;
   height: 50px;
-  background-color: rgb(57, 29, 73);
-  border: solid;
+  background-color: rgb(9, 61, 145);
+  border: none;
   border-width: 1px;
   border-color: pink;
-  border-radius: 20px;
+  border-radius: 5px;
   color: white;
   box-shadow: 10px 10px 10px black;
   cursor: pointer;
@@ -17,6 +17,8 @@
 
 .imagebutton:active {
   background-color: white;
+  transform: translate(5px,5px);
+  box-shadow: none;
   color: black;
 }
 

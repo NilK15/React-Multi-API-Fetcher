@@ -10,20 +10,23 @@
 }
 
 .dogbutton {
+  border: none;
   font-size: 24px;
   font-weight: bold;
   margin-top: 20px;
   width: 20%;
   border-radius: 10px;
   height: 40px;
-  box-shadow: 3px 3px 5px black;
+  box-shadow: 5px 5px 5px black;
   cursor: pointer;
+  background-color: rgb(185, 211, 226);
+  color: black;
 }
 
 .dogbutton:active {
   box-shadow: none;
   transform: translate(5px,5px);
-  background-color: bisque;
+  background-color: white;
 
 }
 
@@ -32,9 +35,14 @@
   border: solid;
   border-color: white;
   max-height: 600px;
-  margin-left: 20px;
+  max-width: 100%;
+  margin-left: 50px;
 }
 .doginfo {
+  border: solid;
+  border-color: lightskyblue;
+  border-spacing: 10px;
+  border-radius: 20px;
   font-size: 32px;
   width: 50%;
   margin-left: 100px;
