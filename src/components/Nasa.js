@@ -10,7 +10,7 @@ function Nasa() {
       document.getElementsByClassName("fetchedstuffdiv");
     divToHideShowColletion[0].classList.add("fetchedstuffdivshow");
     console.log(divToHideShowColletion);
-    // divToHideShowColletion[0].classList.remove("fetchedstuffdiv");
+    divToHideShowColletion[0].classList.remove("fetchedstuffdiv");
 
     // let nasaDateCollection = document.getElementsByClassName("nasadate");
     // let nasaExplanationCollection =
