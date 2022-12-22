@@ -1,0 +1,13 @@
+.dogdiv {
+  display: none;
+}
+
+.dogdivshow {
+  display: flex;
+  flex-direction: column;
+}
+
+.bodybackgrounddog{
+  /* background-image: url(../img/christmass.jpg); */
+  background-color: white;
+}

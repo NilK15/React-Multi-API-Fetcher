@@ -5,12 +5,14 @@ import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 import Header from "./components/Header";
 import Nasa from "./components/Nasa";
+import Dog from "./components/Dog";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Header />
     <Nasa />
+    <Dog />
   </React.StrictMode>
 );
 
