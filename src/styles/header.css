@@ -18,12 +18,10 @@
 
 .navbar {
   display:flex;
-  flex-direction: row;
-  justify-content: space-around;
   margin: 20px 20px 0 20px;
 }
 
-nav button {
+.navbutton {
   height: 45px;
   flex: 1;
   font-size: 28px;
@@ -70,3 +68,7 @@ body{
   background-attachment: fixed;
 }
 
+
+@media (min-width: 1280px) {
+  
+}

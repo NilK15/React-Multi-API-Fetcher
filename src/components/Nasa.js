@@ -52,6 +52,12 @@ function Nasa() {
           </p>
         </div>
       </div>
+      <div className="nasafooter">
+        <a href="https://api.nasa.gov/">
+          Made by using API found on https://api.nasa.gov/
+        </a>
+      </div>
+      <div className="nasaauthor">Developed by: Sunil Khatri</div>
     </div>
   );
 }

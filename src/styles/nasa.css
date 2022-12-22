@@ -91,6 +91,24 @@
   width: 35%;
 }
 
+.nasafooter {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nasaauthor {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 @keyframes jiggleJiggle {
  from {
   transform: rotate(10deg);
