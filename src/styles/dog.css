@@ -50,13 +50,13 @@
   background-color: lightgray;
   opacity: .7;
   margin-right: 20px;
+  height: 100%;
 }
 
 .doginfo p {
   font-family: 'Source Code Pro';
   background-color: aliceblue;
   text-align: center;
-
 }
 
 .fetcheddogstuff {
