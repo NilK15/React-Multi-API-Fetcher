@@ -12,7 +12,6 @@ const removeDivs = (div) => {
   let divArray = ["nasadiv", "dogdiv", "pokemondiv"];
   let arrayWithoutExcludedDiv = [];
   divArray.filter((e) => e !== div).map((e) => arrayWithoutExcludedDiv.push(e));
-  console.log(arrayWithoutExcludedDiv);
 
   arrayWithoutExcludedDiv.forEach((e) => {
     let divToRemove = document.getElementsByClassName(e);

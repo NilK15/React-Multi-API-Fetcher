@@ -9,7 +9,6 @@ function Nasa() {
     let divToHideShowColletion =
       document.getElementsByClassName("fetchedstuffdiv");
     divToHideShowColletion[0].classList.add("fetchedstuffdivshow");
-    console.log(divToHideShowColletion);
 
     fetch(
       "https://api.nasa.gov/planetary/apod?api_key=jozRCXDTPwLMG0Q3Kw3mWpSfV5bVxzWLNj6q5TC2"
