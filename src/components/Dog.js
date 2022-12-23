@@ -27,7 +27,6 @@ function Dog() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setDogData(data);
         setDogName(data[0].breeds[0].name);
         setDogHeight(data[0].breeds[0].height.metric);

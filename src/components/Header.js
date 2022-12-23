@@ -2,14 +2,17 @@
 import "../styles/header.css";
 import nasapic from "../img/space.jpg";
 
+const BODY_BACKGROUND_NASA_DIV = "bodybackgroundnasadiv";
+const BODY_BACKGROUND_DOG_DIV = "bodybackgrounddogdiv";
+const BODY_BACKGROUND_POKEMON_DIV = "bodybackgroundpokemondiv";
+const BODY_BACKGROUND_GOOGLE_DIV = "bodybackgroundgooglediv";
+
 const removeDivs = (div) => {
-  let divToExclude = div;
   // let divArray = ["nasadiv", "dogdiv", "pokemondiv", "googlediv"];
-  let divArray = ["nasadiv", "dogdiv"];
+  let divArray = ["nasadiv", "dogdiv", "pokemondiv"];
   let arrayWithoutExcludedDiv = [];
-  divArray
-    .filter((e) => e !== divToExclude)
-    .map((e) => arrayWithoutExcludedDiv.push(e));
+  divArray.filter((e) => e !== div).map((e) => arrayWithoutExcludedDiv.push(e));
+  console.log(arrayWithoutExcludedDiv);
 
   arrayWithoutExcludedDiv.forEach((e) => {
     let divToRemove = document.getElementsByClassName(e);
@@ -18,71 +21,15 @@ const removeDivs = (div) => {
     }
   });
   document.body.classList.remove(
-    "bodybackgroundnasadiv",
-    "bodybackgrounddogdiv",
-    "bodybackgroundpokemondiv",
-    "bodybackgroundgooglediv"
+    BODY_BACKGROUND_NASA_DIV,
+    BODY_BACKGROUND_DOG_DIV,
+    BODY_BACKGROUND_POKEMON_DIV,
+    BODY_BACKGROUND_GOOGLE_DIV
   );
+  const pokestring = `bodybackground${div}`;
   document.body.classList.add(`bodybackground${div}`);
   let divToShow = document.getElementsByClassName(div);
   divToShow[0].classList.add(`${div}show`);
-};
-
-const showHideDiv = (divClass) => {
-  removeDivs(divClass);
-  // if (divClass === "nasadiv") {
-  //   // let dogDivToRemove = document.getElementsByClassName("dogdiv");
-  //   // if (dogDivToRemove[0].classList.contains("dogdivshow")) {
-  //   //   dogDivToRemove[0].classList.remove("dogdivshow");
-  //   // }
-
-  //   // let pokemonDivToRemove = document.getElementsByClassName("pokemondiv");
-  //   // if (pokemonDivToRemove[0].classList.contains("pokemondivshow")) {
-  //   //   pokemonDivToRemove[0].classList.remove("pokemondivshow");
-  //   // }
-
-  //   // let googleDivToRemove = document.getElementsByClassName("googlediv");
-  //   // if (googleDivToRemove[0].classList.contains("googledivshow")) {
-  //   //   googleDivToRemove[0].classList.remove("googledivshow");
-  //   // }
-
-  //   document.body.classList.remove(
-  //     "bodybackgroundnasadiv",
-  //     "bodybackgrounddogdiv",
-  //     "bodybackgroundpokemondiv",
-  //     "bodybackgroundgooglediv"
-  //   );
-  //   document.body.classList.add(`bodybackground${divClass}`);
-  //   let divToShow = document.getElementsByClassName(divClass);
-  //   divToShow[0].classList.add(`${divClass}show`);
-  // } else if (divClass === "dogdiv") {
-  //   let nasaDivToRemove = document.getElementsByClassName("nasadiv");
-  //   if (nasaDivToRemove[0].classList.contains("nasadivshow")) {
-  //     nasaDivToRemove[0].classList.remove("nasadivshow");
-  //   }
-
-  //   // let pokemonDivToRemove = document.getElementsByClassName("pokemondiv");
-  //   // if (pokemonDivToRemove[0].classList.contains("pokemondivshow")) {
-  //   //   pokemonDivToRemove[0].classList.remove("pokemondivshow");
-  //   // }
-
-  //   // let googleDivToRemove = document.getElementsByClassName("googlediv");
-  //   // if (googleDivToRemove[0].classList.contains("googledivshow")) {
-  //   //   googleDivToRemove[0].classList.remove("googledivshow");
-  //   // }
-  //   document.body.classList.remove(
-  //     "bodybackgroundnasa",
-  //     "bodybackgrounddog",
-  //     "bodybackgroundpokemon",
-  //     "bodybackgroundgoogle"
-  //   );
-  //   document.body.classList.add("bodybackgrounddog");
-  //   let divToShow = document.getElementsByClassName(divClass);
-  //   // divToShow[0].classList.add(`nasadivshow);
-
-  //   // let divToShow = document.getElementsByClassName(divClass);
-  //   // divToShow[0].classList.add("dogdivshow");
-  // }
 };
 
 const hideShow = (innerHTML, divToShow) => {
@@ -94,7 +41,7 @@ const hideShow = (innerHTML, divToShow) => {
       element.classList.remove("selected");
     }
   }
-  showHideDiv(divToShow);
+  removeDivs(divToShow);
 };
 
 function Header() {
