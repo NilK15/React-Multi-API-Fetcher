@@ -213,6 +213,8 @@
 
 .pokemonSubInfo p {
   white-space: nowrap;
+  margin: 0;
+  margin-top: 5px;
 }
 
 .bodybackgroundpokemondiv {
