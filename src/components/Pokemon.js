@@ -15,6 +15,7 @@ function Pokemon() {
   const [pokemonCardImages, setPokemonCardImages] = useState([]);
   const [selectedPokemonCard, setSelectedPokemonCard] =
     useState("nothing here yet");
+  const [pokemonSearchValue, setPokemonSearchValue] = useState("");
 
   const fetchPokemonByPage = () => {
     console.log(`retrieving...`);
@@ -30,16 +31,46 @@ function Pokemon() {
       });
   };
 
+  const fetchPokemonByName = () => {
+    console.log(`retrieving...`);
+    let resultDiv = document.getElementsByClassName("pokemonresultgrid");
+    resultDiv[0].style.color = "white";
+    resultDiv[0].innerHTML = "Retrieving...";
+    fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}`)
+      .then((res) => res.json())
+      .then((resJson) => {
+        console.log(resJson);
+        setPokemon(resJson.data);
+        resJson.data.forEach((object) => {});
+        resultDiv[0].innerHTML = "";
+      });
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      fetchPokemonByName();
+    }
+  };
+
   // const selectedPokemon = () => {};
 
   return (
     <div className="pokemondiv">
       <div className="pokemonsidebar">
-        <input className="searchQuery" placeholder="Search Pokemon..."></input>
-        <button className="retrievecardsbutton" onClick={fetchPokemonByPage}>
+        <input
+          className="searchQuery"
+          placeholder="Search Pokemon..."
+          onKeyDown={handleKeyDown}
+          onChange={(element) => {
+            setPokemonSearchValue(element.target.value);
+          }}
+        ></input>
+        <button className="retrievecardsbutton" onClick={fetchPokemonByName}>
           Retrieve Pokemon
         </button>
-        <button className="pagepokemonbutton">Page of Pokemon</button>
+        <button className="pagepokemonbutton" onClick={fetchPokemonByPage}>
+          Page of Pokemon
+        </button>
       </div>
       <div className="pokemonresultgrid">
         {pokemon.map((e) => {
