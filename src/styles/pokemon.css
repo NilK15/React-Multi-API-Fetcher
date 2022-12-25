@@ -36,7 +36,7 @@
   border-right-color: red;
   border-left-color: white;
   border-bottom-color: white;
-  background-color:rgba(0,0,0,0.5)
+  background-color: rgba(0,0,0,0.8);
 }
 
 
@@ -220,7 +220,7 @@
 .bodybackgroundpokemondiv {
   /* background-color: rgb(61, 3, 3); */
   background-color: white;
-  background-image: url(../img/pokemon3.jpg);
+  background-image: url(../img/pokemon.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
