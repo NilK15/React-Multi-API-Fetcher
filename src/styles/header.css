@@ -3,12 +3,12 @@
   flex-direction: column;
   text-align: center;
   font-size: 28px;
-
+  align-items: center;
 }
 
 .Header-title {
   background-color: gray;
-  opacity: .8;
+  width: 20%;
   border-radius: 10px;
   padding: 20px 0 20px 0;
   margin: 10px 20px 0px 20px;
@@ -18,17 +18,19 @@
 
 .navbar {
   display:flex;
+  border-radius: 10px;
   margin: 20px 20px 0 20px;
+  justify-content: center;
+  column-gap: 20px;
 }
 
 .navbutton {
-  height: 45px;
-  flex: 1;
   font-size: 28px;
-  border-radius: 20px;
   border: solid;
   border-color: black;
-  background-color: rgb(151, 151, 151);
+  /* background-color: rgb(151, 151, 151); */
+  background-color: lightgray;
+  border-radius: 10px;
   color: white;
   box-shadow: 5px 5px 5px black;
   cursor: pointer;
