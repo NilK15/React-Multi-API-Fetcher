@@ -11,17 +11,19 @@ function Pokemon() {
    needed updating, so it uses w/e the inital value was.
    */
 
-  const [retrieving, setRetrieving] = useState("");
+  const [retrieving, setRetrieving] = useState("Search for Pokemon Cards!");
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(1);
   const [pokemonCardImages, setPokemonCardImages] = useState([]);
-  const [selectedPokemonCard, setSelectedPokemonCard] = useState("");
+  const [selectedPokemonCard, setSelectedPokemonCard] = useState(
+    "Search then Select a Card to Magnify"
+  );
   const [pokemonSearchValue, setPokemonSearchValue] = useState("charizard");
 
   const fetchPokemonByPage = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     console.log(`retrieving...`);
-    setRetrieving("Retrieving...");
+    setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
       .then((res) => res.json())
       .then((resJson) => {
@@ -33,7 +35,7 @@ function Pokemon() {
   const fetchPokemonByName = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     console.log(`retrieving...`);
-    setRetrieving("Retrieving...");
+    setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}*`)
       .then((res) => res.json())
       .then((resJson) => {
@@ -52,21 +54,23 @@ function Pokemon() {
 
   return (
     <div className="pokemondiv">
-      <div className="pokemonsidebar">
-        <input
-          className="searchQuery"
-          placeholder="Search Pokemon..."
-          onKeyDown={handleKeyDown}
-          onChange={(element) => {
-            setPokemonSearchValue(element.target.value);
-          }}
-        ></input>
-        <button className="retrievecardsbutton" onClick={fetchPokemonByName}>
-          Retrieve Pokemon
-        </button>
-        <button className="pagepokemonbutton" onClick={fetchPokemonByPage}>
-          Page of Pokemon
-        </button>
+      <div className="pokemonsidebarDiv">
+        <div className="pokemonsidebar">
+          <input
+            className="searchQuery"
+            placeholder="Search Pokemon..."
+            onKeyDown={handleKeyDown}
+            onChange={(element) => {
+              setPokemonSearchValue(element.target.value);
+            }}
+          ></input>
+          <button className="retrievecardsbutton" onClick={fetchPokemonByName}>
+            Retrieve Pokemon
+          </button>
+          <button className="pagepokemonbutton" onClick={fetchPokemonByPage}>
+            Page of Pokemon
+          </button>
+        </div>
       </div>
       <div className="pokemonresultgrid">
         {retrieving}
