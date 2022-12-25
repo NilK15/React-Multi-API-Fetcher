@@ -7,7 +7,7 @@
 }
 
 .Header-title {
-  background-color: gray;
+  background-color: rgb(65, 65, 65);
   border-radius: 10px;
   padding: 20px;
   margin: 10px 20px 0px 20px;
@@ -28,7 +28,7 @@
   border: solid;
   border-color: black;
   /* background-color: rgb(151, 151, 151); */
-  background-color: lightgray;
+  background-color: brown;
   border-radius: 10px;
   color: white;
   box-shadow: 5px 5px 5px black;

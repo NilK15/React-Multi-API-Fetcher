@@ -19,6 +19,12 @@ function Pokemon() {
     "Search then Select a Card to Magnify"
   );
   const [pokemonSearchValue, setPokemonSearchValue] = useState("charizard");
+  const [flavorText, setFlavorText] = useState("No Text Available");
+  const [artist, setArtist] = useState("");
+  const [rarity, setRarity] = useState("");
+  const [cardMarket, setCardMarket] = useState("");
+  const [cardMarketUrl, setCardMarketUrl] = useState("");
+  const [averageSellPrice, setAverageSellPrice] = useState("Not Available");
 
   const fetchPokemonByPage = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
@@ -81,21 +87,64 @@ function Pokemon() {
               key={e.images.large}
               src={e.images.large}
               alt="Not Available"
-              onClick={() =>
+              onClick={() => {
                 setSelectedPokemonCard(
                   <img
                     className="selectedPokemonCard"
                     src={e.images.large}
                     alt="Nothing to Show!"
                   ></img>
-                )
-              }
+                );
+                setArtist(e.artist);
+                setCardMarket(e.cardMarket);
+                if (e.flavorText) {
+                  setFlavorText(e.flavorText);
+                } else {
+                  setFlavorText("No Description");
+                }
+                setRarity(e.rarity);
+                if (e.cardmarket.prices.averageSellPrice) {
+                  setAverageSellPrice(
+                    `\u20AC ${e.cardmarket.prices.averageSellPrice}`
+                  );
+                } else {
+                  setAverageSellPrice("No Pricing");
+                }
+                if (e.cardmarket.url) {
+                  setCardMarketUrl(e.cardmarket.url);
+                  console.log(e.cardmarket.url);
+                } else {
+                  setCardMarketUrl("No Market Link Provided");
+                }
+              }}
             ></img>
           );
         })}
       </div>
       <div className="pokemonselected">
-        <div className="pokemonselectedDiv">{selectedPokemonCard}</div>
+        <div className="pokemonselectedDiv">
+          <div className="pokemonItself">{selectedPokemonCard}</div>
+          <blockquote className="flavorText">{flavorText}</blockquote>
+          <div className="pokemonInfo">
+            <div className="pokemonSubInfoDiv">
+              <div className="pokemonSubInfo">
+                <p>Avg Sale:</p>
+                <p> {averageSellPrice}</p>
+                <a href={cardMarketUrl} target="_blank" className="marketLink">
+                  Link to Market
+                </a>
+              </div>
+              <div className="pokemonSubInfo">
+                <p>Artist:</p>
+                <p>{artist}</p>
+              </div>
+              <div className="pokemonSubInfo">
+                <p>Rarity:</p>
+                <p>{rarity}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

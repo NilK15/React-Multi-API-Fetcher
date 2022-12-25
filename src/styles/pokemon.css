@@ -51,6 +51,15 @@
   box-shadow: 5px 5px 5px inset;
 }
 
+.searchQuery {
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+  height: 30px;
+  box-shadow: 2px 2px 2px inset;
+  outline: none;
+}
+
 .pokemonresultgrid {
   text-align: center;
   align-items: center;
@@ -93,17 +102,19 @@
 .pokemonselected {
   display: flex;
   flex: 1;
-  justify-content: center;
+  max-width: 450px;
   flex-direction: column;
+  justify-content: center;
 }
 
 .pokemonselectedDiv {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   max-width: 100%;
+  min-width: 50%;
+  max-height: 75vh;
   border: solid;
   padding: 10px;
-  flex-direction: column;
   border-radius: 10px;
   border: solid;
   border-top-color: red;
@@ -113,21 +124,46 @@
   text-align: center;
   color: white;
   background-color:rgba(0,0,0,0.5)
+
+}
+
+.pokeminItself{
 }
 
 .selectedPokemonCard {
   width: 100%;
 }
 
-.searchQuery {
-  border-radius: 5px;
-  padding-left: 5px;
-  font-size: 18px;
-  height: 30px;
-  box-shadow: 2px 2px 2px inset;
-  outline: none;
+.pokemonInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.marketLink {
+  color: aqua;
+}
+
+.pokemonSubInfoDiv{
+}
+
+.flavorText {
+  margin: 0;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+.pokemonSubInfo{
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.pokemonSubInfo p {
+  white-space: nowrap;
+}
 
 .bodybackgroundpokemondiv {
   /* background-color: rgb(61, 3, 3); */
@@ -137,6 +173,8 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
 
 @media (max-width: 1100px) {
 
