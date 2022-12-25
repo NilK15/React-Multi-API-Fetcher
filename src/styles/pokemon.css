@@ -50,6 +50,19 @@
 .pokemonsidebar button:active {
   box-shadow: 5px 5px 5px inset;
 }
+.pokemonResult {
+  flex: 2;
+  row-gap: 30px;
+  column-gap: 30px;
+  border-radius: 10px;
+  border: solid;
+  border-top-color: red;
+  border-right-color: red;
+  border-left-color: white;
+  border-bottom-color: white;
+  overflow: hidden scroll;
+  height: 100%;
+}
 
 .pokemonresultgrid {
   display: grid;
@@ -67,6 +80,7 @@
   border-bottom-color: white;
   overflow: hidden scroll;
   height: 100%;
+  color: white;
 }
 
 .pokemonCard {

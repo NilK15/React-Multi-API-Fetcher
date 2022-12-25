@@ -10,39 +10,37 @@ function Pokemon() {
    so, updating those variables, will not be reflected when rendering or printing to console, because react doesn't know those
    needed updating, so it uses w/e the inital value was.
    */
+
+  const [retrieving, setRetrieving] = useState("");
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(1);
   const [pokemonCardImages, setPokemonCardImages] = useState([]);
-  const [selectedPokemonCard, setSelectedPokemonCard] =
-    useState("nothing here yet");
-  const [pokemonSearchValue, setPokemonSearchValue] = useState("");
+  const [selectedPokemonCard, setSelectedPokemonCard] = useState("");
+  const [pokemonSearchValue, setPokemonSearchValue] = useState("charizard");
 
   const fetchPokemonByPage = () => {
-    console.log(`retrieving...`);
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
-    resultDiv[0].style.color = "white";
-    resultDiv[0].innerHTML = "Retrieving...";
+    console.log(`retrieving...`);
+    setRetrieving("Retrieving...");
     fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
       .then((res) => res.json())
       .then((resJson) => {
         setPokemon(resJson.data);
-        resJson.data.forEach((object) => {});
-        resultDiv[0].innerHTML = "";
+        setRetrieving("");
       });
   };
 
   const fetchPokemonByName = () => {
-    console.log(`retrieving...`);
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
-    resultDiv[0].style.color = "white";
-    resultDiv[0].innerHTML = "Retrieving...";
+    console.log(`retrieving...`);
+    setRetrieving("Retrieving...");
     fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}`)
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson);
         setPokemon(resJson.data);
-        resJson.data.forEach((object) => {});
-        resultDiv[0].innerHTML = "";
+        setSelectedPokemonCard("Select a Card");
+        setRetrieving("");
       });
   };
 
@@ -73,6 +71,7 @@ function Pokemon() {
         </button>
       </div>
       <div className="pokemonresultgrid">
+        {retrieving}
         {pokemon.map((e) => {
           return (
             <img
