@@ -169,6 +169,12 @@ function Pokemon() {
           </div>
         </div>
       </div>
+      <div className="pokemonfooter">
+        <a href="https://thedogapi.com/">
+          Made by using API found on https://dev.pokemontcg.io/
+        </a>
+      </div>
+      <div className="pokemonauthor">Developed by: Sunil Khatri</div>
     </div>
   );
 }
