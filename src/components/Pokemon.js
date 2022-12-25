@@ -11,7 +11,7 @@ function Pokemon() {
    needed updating, so it uses w/e the inital value was.
    */
 
-  const [retrieving, setRetrieving] = useState("Search for Pokemon Cards!");
+  const [retrieving, setRetrieving] = useState("");
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(1);
   const [pokemonCardImages, setPokemonCardImages] = useState([]);
