@@ -34,7 +34,7 @@ function Pokemon() {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     console.log(`retrieving...`);
     setRetrieving("Retrieving...");
-    fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}`)
+    fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}*`)
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson);
@@ -49,8 +49,6 @@ function Pokemon() {
       fetchPokemonByName();
     }
   };
-
-  // const selectedPokemon = () => {};
 
   return (
     <div className="pokemondiv">
@@ -78,13 +76,13 @@ function Pokemon() {
               className="pokemonCard"
               key={e.images.large}
               src={e.images.large}
-              alt="no images"
+              alt="Not Available"
               onClick={() =>
                 setSelectedPokemonCard(
                   <img
                     className="selectedPokemonCard"
                     src={e.images.large}
-                    alt="nothing to see here"
+                    alt="Nothing to Show!"
                   ></img>
                 )
               }
@@ -92,7 +90,9 @@ function Pokemon() {
           );
         })}
       </div>
-      <div className="pokemonselected">{selectedPokemonCard}</div>
+      <div className="pokemonselected">
+        <div className="pokemonselectedDiv">{selectedPokemonCard}</div>
+      </div>
     </div>
   );
 }

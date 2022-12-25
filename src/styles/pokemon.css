@@ -98,8 +98,15 @@
 
 .pokemonselected {
   display: flex;
+  flex: 1;
   justify-content: center;
-  max-width: 28%;
+  flex-direction: column;
+}
+
+.pokemonselectedDiv {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
   border: solid;
   padding: 10px;
   flex-direction: column;
@@ -109,6 +116,8 @@
   border-right-color: red;
   border-left-color: white;
   border-bottom-color: white;
+  text-align: center;
+  color: white;
 }
 
 .selectedPokemonCard {
