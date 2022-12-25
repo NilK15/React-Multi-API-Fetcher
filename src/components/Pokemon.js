@@ -40,6 +40,11 @@ function Pokemon() {
 
   const fetchPokemonByName = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
+    resultDiv[0].classList.add("pokemonresultgridshow");
+    let instructionDiv = document.getElementsByClassName(
+      "pokemonSearchInstruction"
+    );
+    instructionDiv[0].classList.add("pokemonSearchInstructionHide");
     console.log(`retrieving...`);
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}*`)
@@ -47,7 +52,6 @@ function Pokemon() {
       .then((resJson) => {
         console.log(resJson);
         setPokemon(resJson.data);
-        setSelectedPokemonCard("Select a Card");
         setRetrieving("");
       });
   };
@@ -78,69 +82,88 @@ function Pokemon() {
           </button>
         </div>
       </div>
-      <div className="pokemonresultgrid">
-        {retrieving}
-        {pokemon.map((e) => {
-          return (
-            <img
-              className="pokemonCard"
-              key={e.images.large}
-              src={e.images.large}
-              alt="Not Available"
-              onClick={() => {
-                setSelectedPokemonCard(
-                  <img
-                    className="selectedPokemonCard"
-                    src={e.images.large}
-                    alt="Nothing to Show!"
-                  ></img>
-                );
-                setArtist(e.artist);
-                setCardMarket(e.cardMarket);
-                if (e.flavorText) {
-                  setFlavorText(e.flavorText);
-                } else {
-                  setFlavorText("No Description");
-                }
-                setRarity(e.rarity);
-                if (e.cardmarket.prices.averageSellPrice) {
-                  setAverageSellPrice(
-                    `\u20AC ${e.cardmarket.prices.averageSellPrice}`
-                  );
-                } else {
-                  setAverageSellPrice("No Pricing");
-                }
-                if (e.cardmarket.url) {
-                  setCardMarketUrl(e.cardmarket.url);
-                  console.log(e.cardmarket.url);
-                } else {
-                  setCardMarketUrl("No Market Link Provided");
-                }
-              }}
-            ></img>
-          );
-        })}
+      <div className="pokemonSearchInstruction">
+        <p>
+          Type a Pokemon name, it doesn't have to be the whole name. Then...
+        </p>
       </div>
-      <div className="pokemonselected">
-        <div className="pokemonselectedDiv">
-          <div className="pokemonItself">{selectedPokemonCard}</div>
-          <blockquote className="flavorText">{flavorText}</blockquote>
-          <div className="pokemonInfo">
-            <div className="pokemonSubInfoDiv">
-              <div className="pokemonSubInfo">
-                <p>Avg Sale:</p>
-                <p> {averageSellPrice}</p>
-                <a href={cardMarketUrl} target="_blank" className="marketLink">
-                  Link to Market
-                </a>
-              </div>
-              <div className="pokemonSubInfo">
-                <p>Artist:</p>
-                <p>{artist}</p>
-              </div>
-              <div className="pokemonSubInfo">
-                <p>Rarity:</p>
-                <p>{rarity}</p>
+      <div className="divSmallWidth">
+        <div className="pokemonresultgrid">
+          {retrieving}
+          {pokemon.map((e) => {
+            return (
+              <img
+                className="pokemonCard"
+                key={e.images.large}
+                src={e.images.large}
+                alt="Not Available"
+                onClick={() => {
+                  let div = document.getElementsByClassName("pokemonselected");
+                  let instructionDiv =
+                    document.getElementsByClassName("instructionToClick");
+                  div[0].classList.add("pokemonselectedshow");
+                  instructionDiv[0].classList.add("instructionToClickHide");
+                  setSelectedPokemonCard(
+                    <img
+                      className="selectedPokemonCard"
+                      src={e.images.large}
+                      alt="Nothing to Show!"
+                    ></img>
+                  );
+                  setArtist(e.artist);
+                  setCardMarket(e.cardMarket);
+                  if (e.flavorText) {
+                    setFlavorText(e.flavorText);
+                  } else {
+                    setFlavorText("No Description");
+                  }
+                  setRarity(e.rarity);
+                  if (e.cardmarket.prices.averageSellPrice) {
+                    setAverageSellPrice(
+                      `\u20AC ${e.cardmarket.prices.averageSellPrice}`
+                    );
+                  } else {
+                    setAverageSellPrice("No Pricing");
+                  }
+                  if (e.cardmarket.url) {
+                    setCardMarketUrl(e.cardmarket.url);
+                    console.log(e.cardmarket.url);
+                  } else {
+                    setCardMarketUrl("No Market Link Provided");
+                  }
+                }}
+              ></img>
+            );
+          })}
+        </div>
+        <div className="instructionToClick">
+          <p> ...Click one of the cards to get more information!</p>
+        </div>
+        <div className="pokemonselected">
+          <div className="pokemonselectedDiv">
+            <div className="pokemonItself">{selectedPokemonCard}</div>
+            <blockquote className="flavorText">{flavorText}</blockquote>
+            <div className="pokemonInfo">
+              <div className="pokemonSubInfoDiv">
+                <div className="pokemonSubInfo">
+                  <p>Avg Sale:</p>
+                  <p> {averageSellPrice}</p>
+                  <a
+                    href={cardMarketUrl}
+                    target="_blank"
+                    className="marketLink"
+                  >
+                    Link to Market
+                  </a>
+                </div>
+                <div className="pokemonSubInfo">
+                  <p>Artist:</p>
+                  <p>{artist}</p>
+                </div>
+                <div className="pokemonSubInfo">
+                  <p>Rarity:</p>
+                  <p>{rarity}</p>
+                </div>
               </div>
             </div>
           </div>
