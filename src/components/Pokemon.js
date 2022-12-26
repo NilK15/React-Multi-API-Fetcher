@@ -30,10 +30,9 @@ function Pokemon() {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     resultDiv[0].classList.add("pokemonresultgridshow");
     let instructionDiv = document.getElementsByClassName(
-      "pokemonSearchInstruction"
+      "instructionToClickHide"
     );
-    instructionDiv[0].classList.add("pokemonSearchInstructionHide");
-    console.log(`retrieving...`);
+    instructionDiv[0].classList.add("instructionToClick");
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
       .then((res) => res.json())
@@ -47,10 +46,9 @@ function Pokemon() {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     resultDiv[0].classList.add("pokemonresultgridshow");
     let instructionDiv = document.getElementsByClassName(
-      "pokemonSearchInstruction"
+      "instructionToClickHide"
     );
-    instructionDiv[0].classList.add("pokemonSearchInstructionHide");
-    console.log(`retrieving...`);
+    instructionDiv[0].classList.add("instructionToClick");
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}*`)
       .then((res) => res.json())
@@ -80,17 +78,12 @@ function Pokemon() {
             }}
           ></input>
           <button className="retrievecardsbutton" onClick={fetchPokemonByName}>
-            Retrieve Pokemon
+            Get Pokemon
           </button>
           <button className="pagepokemonbutton" onClick={fetchPokemonByPage}>
-            Page of Pokemon
+            Fetch Page
           </button>
         </div>
-      </div>
-      <div className="pokemonSearchInstruction">
-        <p>
-          Type a Pokemon name, it doesn't have to be the whole name. Then...
-        </p>
       </div>
       <div className="divSmallWidth">
         <div className="pokemonresultgrid">
@@ -104,10 +97,11 @@ function Pokemon() {
                 alt="Not Available"
                 onClick={() => {
                   let div = document.getElementsByClassName("pokemonselected");
-                  let instructionDiv =
-                    document.getElementsByClassName("instructionToClick");
+                  let instructionDiv = document.getElementsByClassName(
+                    "instructionToClickHide"
+                  );
                   div[0].classList.add("pokemonselectedshow");
-                  instructionDiv[0].classList.add("instructionToClickHide");
+                  instructionDiv[0].classList.remove("instructionToClick");
                   setSelectedPokemonCard(
                     <img
                       className="selectedPokemonCard"
@@ -148,8 +142,8 @@ function Pokemon() {
             );
           })}
         </div>
-        <div className="instructionToClick">
-          <p> ...Click one of the cards to get more information!</p>
+        <div className="instructionToClickHide">
+          <p> Click one of the cards to get more information!</p>
         </div>
         <div className="pokemonselected">
           <div className="pokemonselectedDiv">

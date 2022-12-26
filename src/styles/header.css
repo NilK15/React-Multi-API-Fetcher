@@ -64,6 +64,15 @@ nav button:active {
 }
 
 
-@media (min-width: 1280px) {
+
+@media (max-width: 1150px) {
+  .navbar {
+    display:flex;
+    justify-content: center;
+  }
+  .navbutton{
+    margin: 0;
+    padding: 5px;
+  }
   
 }
