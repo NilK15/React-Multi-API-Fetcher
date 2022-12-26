@@ -12,7 +12,6 @@ function Header() {
   const BODY_BACKGROUND_GOOGLE_DIV = "bodybackgroundgooglediv";
 
   const removeDivs = (div) => {
-    // let divArray = ["nasadiv", "dogdiv", "pokemondiv", "googlediv"];
     let divArray = ["nasadiv", "dogdiv", "pokemondiv"];
     let arrayWithoutExcludedDiv = [];
     divArray
@@ -68,12 +67,6 @@ function Header() {
           onClick={() => hideShow("Pokemon", "pokemondiv")}
         >
           Pokemon
-        </button>
-        <button
-          className="navbutton"
-          onClick={() => hideShow("Google", "googlediv")}
-        >
-          Google
         </button>
       </nav>
     </header>

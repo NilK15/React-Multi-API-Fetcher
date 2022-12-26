@@ -28,6 +28,11 @@ function Pokemon() {
 
   const fetchPokemonByPage = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
+    resultDiv[0].classList.add("pokemonresultgridshow");
+    let instructionDiv = document.getElementsByClassName(
+      "pokemonSearchInstruction"
+    );
+    instructionDiv[0].classList.add("pokemonSearchInstructionHide");
     console.log(`retrieving...`);
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
@@ -120,7 +125,9 @@ function Pokemon() {
                   setRarity(e.rarity);
                   if (e.cardmarket.prices.averageSellPrice) {
                     setAverageSellPrice(
-                      `\u20AC ${e.cardmarket.prices.averageSellPrice}`
+                      `$ ${(
+                        e.cardmarket.prices.averageSellPrice * 1.06
+                      ).toFixed(2)}`
                     );
                   } else {
                     setAverageSellPrice("No Pricing");
@@ -130,6 +137,11 @@ function Pokemon() {
                     console.log(e.cardmarket.url);
                   } else {
                     setCardMarketUrl("No Market Link Provided");
+                  }
+                  if (e.rarity) {
+                    setRarity(e.rarity);
+                  } else {
+                    setRarity("Not Available");
                   }
                 }}
               ></img>
