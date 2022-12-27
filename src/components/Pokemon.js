@@ -28,6 +28,8 @@ function Pokemon() {
   const [averageSellPrice, setAverageSellPrice] = useState("Not Available");
 
   const fetchPokemonByPage = () => {
+    const pageNum = Math.floor(Math.random() * 63 + 1);
+    // setPage(pageNum);
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     resultDiv[0].classList.add("pokemonresultgridshow");
     if (instructionVisible == 0) {
@@ -38,7 +40,7 @@ function Pokemon() {
       setInstructionVisible(1);
     }
     setRetrieving("Retrieving New Data Please Wait...");
-    fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
+    fetch(`https://api.pokemontcg.io/v2/cards?page=${pageNum}`)
       .then((res) => res.json())
       .then((resJson) => {
         setPokemon(resJson.data);
@@ -91,7 +93,7 @@ function Pokemon() {
             Get Pokemon
           </button>
           <button className="pagepokemonbutton" onClick={fetchPokemonByPage}>
-            Fetch Page
+            Fetch Random
           </button>
         </div>
       </div>
