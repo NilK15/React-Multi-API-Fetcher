@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-multi-api-fetcher/static/css/main.036b8e48.css",
+    "main.css": "/react-multi-api-fetcher/static/css/main.ba22235f.css",
     "main.js": "/react-multi-api-fetcher/static/js/main.fba8ce34.js",
     "static/js/787.82b127d5.chunk.js": "/react-multi-api-fetcher/static/js/787.82b127d5.chunk.js",
     "static/media/christmass.jpg": "/react-multi-api-fetcher/static/media/christmass.f373e20d5c201d7157fa.jpg",
@@ -9,12 +9,12 @@
     "static/media/pokemon.jpg": "/react-multi-api-fetcher/static/media/pokemon.de8cfa8a4126f88510c0.jpg",
     "static/media/nasa.svg": "/react-multi-api-fetcher/static/media/nasa.5ba9c0982927e00d30781cae466f718a.svg",
     "index.html": "/react-multi-api-fetcher/index.html",
-    "main.036b8e48.css.map": "/react-multi-api-fetcher/static/css/main.036b8e48.css.map",
+    "main.ba22235f.css.map": "/react-multi-api-fetcher/static/css/main.ba22235f.css.map",
     "main.fba8ce34.js.map": "/react-multi-api-fetcher/static/js/main.fba8ce34.js.map",
     "787.82b127d5.chunk.js.map": "/react-multi-api-fetcher/static/js/787.82b127d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.036b8e48.css",
+    "static/css/main.ba22235f.css",
     "static/js/main.fba8ce34.js"
   ]
 }
