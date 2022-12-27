@@ -11,6 +11,7 @@ function Pokemon() {
    needed updating, so it uses w/e the inital value was.
    */
 
+  const [instructionVisible, setInstructionVisible] = useState(0);
   const [retrieving, setRetrieving] = useState("");
   const [pokemon, setPokemon] = useState([]);
   const [page, setPage] = useState(1);
@@ -29,10 +30,13 @@ function Pokemon() {
   const fetchPokemonByPage = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     resultDiv[0].classList.add("pokemonresultgridshow");
-    let instructionDiv = document.getElementsByClassName(
-      "instructionToClickHide"
-    );
-    instructionDiv[0].classList.add("instructionToClick");
+    if (instructionVisible == 0) {
+      let instructionDiv = document.getElementsByClassName(
+        "instructionToClickHide"
+      );
+      instructionDiv[0].classList.add("instructionToClick");
+      setInstructionVisible(1);
+    }
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?page=${page}`)
       .then((res) => res.json())
@@ -45,16 +49,22 @@ function Pokemon() {
   const fetchPokemonByName = () => {
     let resultDiv = document.getElementsByClassName("pokemonresultgrid");
     resultDiv[0].classList.add("pokemonresultgridshow");
-    let instructionDiv = document.getElementsByClassName(
-      "instructionToClickHide"
-    );
-    instructionDiv[0].classList.add("instructionToClick");
+    if (instructionVisible == 0) {
+      let instructionDiv = document.getElementsByClassName(
+        "instructionToClickHide"
+      );
+      instructionDiv[0].classList.add("instructionToClick");
+      setInstructionVisible(1);
+    }
     setRetrieving("Retrieving New Data Please Wait...");
     fetch(`https://api.pokemontcg.io/v2/cards?q=name:${pokemonSearchValue}*`)
       .then((res) => res.json())
       .then((resJson) => {
         console.log(resJson);
         setPokemon(resJson.data);
+        // if (!resJson.data.length == 0) {
+        //   setRetrieving("Nothing Available");
+        // }
         setRetrieving("");
       });
   };
@@ -101,6 +111,7 @@ function Pokemon() {
                     "instructionToClickHide"
                   );
                   div[0].classList.add("pokemonselectedshow");
+
                   instructionDiv[0].classList.remove("instructionToClick");
                   setSelectedPokemonCard(
                     <img
