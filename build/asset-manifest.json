@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/react-multi-api-fetcher/static/css/main.526ee9af.css",
-    "main.js": "/react-multi-api-fetcher/static/js/main.fba8ce34.js",
+    "main.js": "/react-multi-api-fetcher/static/js/main.ae379841.js",
     "static/js/787.82b127d5.chunk.js": "/react-multi-api-fetcher/static/js/787.82b127d5.chunk.js",
     "static/media/christmass.jpg": "/react-multi-api-fetcher/static/media/christmass.f373e20d5c201d7157fa.jpg",
     "static/media/nebula.jpeg": "/react-multi-api-fetcher/static/media/nebula.b8558c948d191bfe07c6.jpeg",
     "static/media/space.jpg": "/react-multi-api-fetcher/static/media/space.f9584f3fd25ba107b5fe.jpg",
     "static/media/pokemon.jpg": "/react-multi-api-fetcher/static/media/pokemon.de8cfa8a4126f88510c0.jpg",
-    "static/media/nasa.svg": "/react-multi-api-fetcher/static/media/nasa.5ba9c0982927e00d30781cae466f718a.svg",
+    "static/media/nasa.svg": "/react-multi-api-fetcher/static/media/nasa.1b7ce35d90bb7218a7905c6696e8c588.svg",
     "index.html": "/react-multi-api-fetcher/index.html",
     "main.526ee9af.css.map": "/react-multi-api-fetcher/static/css/main.526ee9af.css.map",
-    "main.fba8ce34.js.map": "/react-multi-api-fetcher/static/js/main.fba8ce34.js.map",
+    "main.ae379841.js.map": "/react-multi-api-fetcher/static/js/main.ae379841.js.map",
     "787.82b127d5.chunk.js.map": "/react-multi-api-fetcher/static/js/787.82b127d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.526ee9af.css",
-    "static/js/main.fba8ce34.js"
+    "static/js/main.ae379841.js"
   ]
 }
